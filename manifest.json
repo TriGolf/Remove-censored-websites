@@ -11,6 +11,11 @@
     "<all_urls>"
   ],
 
+  "browser_action": {
+    "default_title": "Remove blocked content",
+    "default_popup": "popup/popup.html"
+  },
+
   "content_scripts": [
     {
       "matches": ["https://*.qwant.com/*"],

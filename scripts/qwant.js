@@ -13,7 +13,7 @@ function getUrls() {
 async function testUrl(result) {
     try {
         const response = await fetch(result.getAttribute('domain'));
-        console.log(result, "success");
+        console.log(result, "success", response.text());
     } catch (e) {
         console.log(result, "failed", e);
         result.remove()
