@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Remove censured websites",
+  "version": "1.0",
+
+
+  "description": "Removes search results that are bloqued",
+
+  "permissions": [
+    "https://*.qwant.com/*",
+    "<all_urls>"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.qwant.com/*"],
+      "js": ["scripts/qwant.js"]
+    }
+  ]
+}
