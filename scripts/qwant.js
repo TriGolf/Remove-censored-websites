@@ -1,21 +1,22 @@
 function getUrls() {
     const results = document.querySelectorAll('[data-testid="webResult"]');
     console.log(results);
-    let urls = []
+    let results_array = []
     for (let i = 0; i<results.length; i++) {
-        console.log(results[i].getAttribute("domain"))
-        urls.push(results[i].getAttribute("domain"));
+        console.log(results[i]);
+        results_array.push(results[i]);
     }
-    console.log(urls);
-    return urls;
+    console.log(results_array);
+    return results_array;
 }
 
-async function testUrl(url) {
+async function testUrl(result) {
     try {
-        const response = await fetch(url);
-        console.log(url, "success");
+        const response = await fetch(result.getAttribute('domain'));
+        console.log(result, "success");
     } catch (e) {
-        console.log(url, "failed", e);
+        console.log(result, "failed", e);
+        result.remove()
     }
 }
 
@@ -39,8 +40,8 @@ function waitForElement(selector, callback) {
 // Usage
 waitForElement('[data-testid="webResult"]', async (element) => {
     console.log("test");
-    const urls = getUrls();
-    await Promise.all(urls.map(url => testUrl(url)));
+    const results = getUrls();
+    await Promise.all(results.map(result => testUrl(result)));
     // Perform actions on the element
 });
 
