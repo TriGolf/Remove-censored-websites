@@ -38,13 +38,17 @@ function waitForElement(selector, callback) {
 
 
 function removeBlockedUrls() {
-    waitForElement('[data-testid="webResult"]', async (element) => {
-        console.log("test");
-        const results = getUrls();
-        await Promise.all(results.map(result => testUrl(result)));
-        // Perform actions on the element
-    });
+    browser.storage.local.get("extensionEnabled", (data) => {
+        if (data.extensionEnabled) {
+            console.log('Activated...');
+            waitForElement('[data-testid="webResult"]', async (element) => {
+                const results = getUrls();
+                await Promise.all(results.map(result => testUrl(result)));
+            });
+        } else {console.log("Deactivated...")}
+    })
 }
+
 
 removeBlockedUrls() //On page load
 
