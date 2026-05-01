@@ -7,7 +7,6 @@
   "description": "Removes search results that are bloqued",
 
   "permissions": [
-    "https://*.qwant.com/*",
     "<all_urls>",
     "storage"
   ],
