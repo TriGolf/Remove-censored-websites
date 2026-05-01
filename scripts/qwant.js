@@ -37,11 +37,20 @@ function waitForElement(selector, callback) {
 
 
 
-// Usage
-waitForElement('[data-testid="webResult"]', async (element) => {
-    console.log("test");
-    const results = getUrls();
-    await Promise.all(results.map(result => testUrl(result)));
-    // Perform actions on the element
-});
+function removeBlockedUrls() {
+    waitForElement('[data-testid="webResult"]', async (element) => {
+        console.log("test");
+        const results = getUrls();
+        await Promise.all(results.map(result => testUrl(result)));
+        // Perform actions on the element
+    });
+}
 
+removeBlockedUrls() //On page load
+
+// Execution when we press enter (it don't refresh the page)
+document.addEventListener('keydown', function(event) {
+    if (event.key == 'Enter') {
+        removeBlockedUrls();
+    }
+})
