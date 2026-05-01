@@ -5,6 +5,7 @@
 A firefox extension that will detect the links that are unavailable due to restrictions (for exemple by your organization) and will remove them from the search results
 
 # How to use :
-Install the extension by adding a temporary module in about:debugging#/runtime/this-firefox.
-Then make a qwant search (only search engine supported for now) and the results that are blocked by your organisation (such as DNS blocking) will be removed
+Install the extention [here](https://addons.mozilla.org/fr/firefox/addon/remove-censured-websites/)
+
+Then make a qwant search (only search engine supported for now) and the results that are blocked by your organisation (such as DNS blocking) will be removed\
 If you want to disable the extension popup and click on the button
