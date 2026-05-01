@@ -34,6 +34,10 @@
     {
       "matches": ["https://*.qwant.com/*"],
       "js": ["scripts/qwant.js"]
+    },
+    {
+      "matches" : ["https://duckduckgo.com/*"],
+      "js": ["scripts/duckduckgo.js"]
     }
   ]
 }

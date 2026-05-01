@@ -1,4 +1,4 @@
-function getUrls() {
+function getResults() {
     const results = document.querySelectorAll('[data-testid="webResult"]');
     console.log(results);
     let results_array = []
@@ -42,7 +42,7 @@ function removeBlockedUrls() {
         if (data.extensionEnabled) {
             console.log('Activated...');
             waitForElement('[data-testid="webResult"]', async (element) => {
-                const results = getUrls();
+                const results = getResults();
                 await Promise.all(results.map(result => testUrl(result)));
             });
         } else {console.log("Deactivated...")}
