@@ -1,7 +1,7 @@
 > [!NOTE]
 > Some websites can be false positive especially websites with antibot protection such as Instagram or reddit (in this case you can disable the extension in the popup)
 
-# Remove-censured-websites
+# Remove-censored-websites
 A firefox extension that will detect the links that are unavailable due to restrictions (for exemple by your organization) and will remove them from the search results
 
 # How to use :
