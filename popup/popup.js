@@ -22,3 +22,5 @@ function updateUi(isEnabled) {
         toggleButton.textContent = 'Deactivated';
     }
 }
+
+updateUi();
